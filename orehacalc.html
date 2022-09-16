@@ -26,16 +26,16 @@ input::-webkit-inner-spin-button {
 <input type="number" id="current" name="current" placeholder="0"><br>
 <script type = "text/javascript">
 function calculate() {
-var fish = parseInt(document.getElementById("fish").value) * 0.8;
-var pearl = parseInt(document.getElementById("pearl").value) * 4;
-var oreha = parseInt(document.getElementById("oreha").value);
-var gold = parseInt(document.getElementById("gold").value);
-var output = (fish + pearl + oreha + gold) / 30;
-var selling = parseInt(document.getElementById("current").value);
-var profit = ((selling - 1) - output).toFixed(2);
-var stacks = profit * 30;
-document.getElementById("output").innerHTML = String(output) + " gold cost per oreha<br>" + String(profit) + " gold profit per oreha with no bonus procs<br>that's " + String(stacks) + " gold per 30 craft, " + String(stacks * 10) + " per 300";
-}
+        var fish = parseInt(document.getElementById("fish").value) * 0.8;
+        var pearl = parseInt(document.getElementById("pearl").value) * 4;
+        var oreha = parseInt(document.getElementById("oreha").value);
+        var gold = parseInt(document.getElementById("gold").value);
+        var output = (fish + pearl + oreha + gold) / 30;
+        var selling = parseInt(document.getElementById("current").value);
+        var profit = ((selling - 1) - output).toFixed(2);
+        var stacks = profit * 30;
+        document.getElementById("output").innerHTML = String(output) + " gold cost per oreha<br>" + String(profit) + " gold profit per oreha with no bonus procs<br>that's " + String(stacks) + " gold per 30 craft, " + String(stacks * 10) + " per 300";
+    }
 </script>
 <input type = "button" onclick = "calculate()" value = "Calculate">  
 <p id=output>0</p>
