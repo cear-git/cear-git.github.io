@@ -30,7 +30,7 @@ function calculate() {
         var pearl = parseInt(document.getElementById("pearl").value) * 4;
         var oreha = parseInt(document.getElementById("oreha").value);
         var gold = parseInt(document.getElementById("gold").value);
-        var output = (fish + pearl + oreha + gold) / 30;
+        var output = ((fish + pearl + oreha + gold) / 30).toFixed(2);
         var selling = parseInt(document.getElementById("current").value);
         var profit = ((selling - 1) - output).toFixed(2);
         var stacks = profit * 30;
