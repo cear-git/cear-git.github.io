@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Oreha Calculator</title>
+<title>Lost Ark utils</title>
 </head>
 <style>
 input[type='number']{
@@ -14,6 +14,7 @@ input::-webkit-inner-spin-button {
 }
 </style>
 <body style=background-color:#3d3d3d>
+<p style=color:white>Oreha Calc</p>
 <label for="fish" style=color:white>Fish:&nbsp;&nbsp;&nbsp;</label>
 <input type="number" id="fish" name="fish" placeholder="0"><br>
 <label for="pearl" style=color:white>Pearls:</label>
@@ -25,7 +26,8 @@ input::-webkit-inner-spin-button {
 <label for="current" style=color:white>Oreha Current Price:</label>
 <input type="number" id="current" name="current" placeholder="0"><br>
 <script type = "text/javascript">
-function calculate() {
+//this is ugly i know i barely know html/js at all and im learning :(
+function orehaCalc() {
         var fish = parseInt(document.getElementById("fish").value) * 0.8;
         var pearl = parseInt(document.getElementById("pearl").value) * 4;
         var oreha = parseInt(document.getElementById("oreha").value);
@@ -34,10 +36,24 @@ function calculate() {
         var selling = parseInt(document.getElementById("current").value);
         var profit = ((selling - 1) - output).toFixed(2);
         var stacks = profit * 30;
-        document.getElementById("output").innerHTML = String(output) + " gold cost per oreha<br>" + String(profit) + " gold profit per oreha with no bonus procs<br>that's " + String(stacks) + " gold per 30 craft, " + String(stacks * 10) + " per 300";
+        document.getElementById("orehaOutput").innerHTML = String(output) + " gold cost per oreha<br>" + String(profit) + " gold profit per oreha with no bonus procs<br>that's " + String(stacks) + " gold per 30 craft, " + String(stacks * 10) + " per 300";
     }
 </script>
-<input type = "button" onclick = "calculate()" value = "Calculate">  
-<p id=output style=color:white>0</p>
+<input type = "button" onclick = "orehaCalc()" value = "Calculate">  
+<p id=oreahaOutput style=color:white>0</p>
+<p style=color:white>Argos box</p>
+<label for="ghl" style=color:white>GHL price:</label>
+<input type="number" id="ghl" name="ghl" placeholder="0"><br>
+<script type = "text/javascript">
+function argosCalc() {
+		var ghl = parseInt(document.getElementById("ghl").value);
+        //bloods have a chance of being 2 or 3, so im going with 2.5, 9 bloods from 500g box + 5 leapstones that are added in not from bloods
+        var blood = ((2.5 * 9) + 5);
+        var ammount =  blood * ghl;
+        document.getElementById("argosOutput").innerHTML = "Average leapstones from buying the box: " + String(blood) + "<br>Gold value of leapstones: " + String(ammount) + "<br>Profit: " + String(ammount - 500) + "<br> Profit if selling: " + String((ammount - 500) - ((ammount - 500 )* 0.05));
+}
+</script>
+<input type = "button" onclick = "argosCalc()" value = "Calculate"> 
+<p id=argosOutput style=color:white>0</p>
 </body>
 </html>
