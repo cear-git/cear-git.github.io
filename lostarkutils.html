@@ -50,7 +50,7 @@ function argosCalc() {
         //bloods have a chance of being 2 or 3, so im going with 2.5, 9 bloods from 500g box + 5 leapstones that are added in not from bloods
         var blood = ((2.5 * 9) + 5);
         var ammount =  blood * ghl;
-        document.getElementById("argosOutput").innerHTML = "Average leapstones from buying the box: " + String(blood) + "<br>Gold value of leapstones: " + String(ammount) + "<br>Profit: " + String(ammount - 500) + "<br> Profit if selling: " + String((ammount - 500) - ((ammount - 500 )* 0.05));
+        document.getElementById("argosOutput").innerHTML = "Average leapstones from buying the box: " + String(blood) + "<br>Gold value of leapstones: " + String(ammount) + "<br>Profit: " + String(ammount - 500);
 }
 </script>
 <input type = "button" onclick = "argosCalc()" value = "Calculate"> 
